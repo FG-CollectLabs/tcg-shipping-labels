@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/tcg-shipping-labels/',
+  base: '/',
   build: {
     chunkSizeWarningLimit: 1600,
     rollupOptions: {
