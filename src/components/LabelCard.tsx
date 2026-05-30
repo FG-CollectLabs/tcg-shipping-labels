@@ -28,13 +28,6 @@ export default function LabelCard({ label, returnAddress, onRemove }: Props) {
           {returnAddress.line2 && <div>{returnAddress.line2}</div>}
           <div>{returnAddress.city}, {returnAddress.state} {returnAddress.zip}</div>
         </div>
-        {/* Stamp placeholder */}
-        <div
-          className="absolute top-2 right-2 border border-dashed border-gray-300 flex items-center justify-center text-gray-300"
-          style={{ width: '22px', height: '16px', fontSize: '4px' }}
-        >
-          STAMP
-        </div>
         {/* Delivery address — center-right, mirroring envelope layout */}
         <div className="absolute" style={{ top: '33%', left: '38%', right: '4px', fontSize: '7px' }}>
           <div className="font-semibold">{to.name}</div>

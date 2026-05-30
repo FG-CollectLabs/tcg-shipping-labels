@@ -16,8 +16,6 @@ export default function LabelPrint({ label, returnAddress }: Props) {
         <div>{returnAddress.city}, {returnAddress.state} {returnAddress.zip}</div>
       </div>
 
-      <div className="print-stamp">STAMP<br />HERE</div>
-
       <div className="print-to">
         <div>{to.name}</div>
         <div>{to.line1}</div>
