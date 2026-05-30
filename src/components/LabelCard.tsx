@@ -15,11 +15,11 @@ const SOURCE_BADGE: Record<ShippingLabel['source'], string> = {
 export default function LabelCard({ label, returnAddress, onRemove }: Props) {
   const { to } = label;
   return (
-    <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden w-56 flex-shrink-0">
-      {/* Miniature label preview — approximately 2:3 aspect (4×6) */}
+    <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden flex-shrink-0" style={{ width: '280px' }}>
+      {/* Miniature label preview — 6:4 landscape aspect */}
       <div
-        className="relative bg-white p-2 border-b border-gray-100 font-mono"
-        style={{ aspectRatio: '4/6', fontSize: '5px', lineHeight: 1.4 }}
+        className="relative bg-white border-b border-gray-100 font-mono"
+        style={{ aspectRatio: '6/4', fontSize: '5px', lineHeight: 1.4 }}
       >
         {/* Return address */}
         <div className="absolute top-2 left-2 text-gray-500" style={{ fontSize: '5px' }}>
@@ -31,12 +31,12 @@ export default function LabelCard({ label, returnAddress, onRemove }: Props) {
         {/* Stamp placeholder */}
         <div
           className="absolute top-2 right-2 border border-dashed border-gray-300 flex items-center justify-center text-gray-300"
-          style={{ width: '20px', height: '15px', fontSize: '4px' }}
+          style={{ width: '22px', height: '16px', fontSize: '4px' }}
         >
           STAMP
         </div>
-        {/* Delivery address */}
-        <div className="absolute left-3 right-1" style={{ top: '38%', fontSize: '7px' }}>
+        {/* Delivery address — center-right, mirroring envelope layout */}
+        <div className="absolute" style={{ top: '33%', left: '38%', right: '4px', fontSize: '7px' }}>
           <div className="font-semibold">{to.name}</div>
           <div>{to.line1}</div>
           {to.line2 && <div>{to.line2}</div>}
